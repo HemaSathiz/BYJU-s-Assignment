@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#464646</color>
     <color name="light_grey">#bababa</color>
+    <color name="detail_white">#f2f2f2</color>
+    <color name="transparent_black">#555555</color>
 
 </resources>

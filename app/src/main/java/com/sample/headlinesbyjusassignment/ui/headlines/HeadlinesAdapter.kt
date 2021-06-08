@@ -12,6 +12,7 @@ import com.sample.headlinesbyjusassignment.R
 import com.sample.headlinesbyjusassignment.model.Article
 import com.sample.headlinesbyjusassignment.ui.headlinesdetail.HeadlinesDetailActivity
 import com.sample.headlinesbyjusassignment.util.ConstantHelper
+import com.sample.headlinesbyjusassignment.util.DateFormatter
 import kotlinx.android.synthetic.main.list_item_article.view.*
 
 class HeadlinesAdapter(private val context: Context, private val list: ArrayList<Article>) :
@@ -28,6 +29,7 @@ class HeadlinesAdapter(private val context: Context, private val list: ArrayList
             }
             itemView.txt_title.text = article.title
             itemView.txt_channel.text = article.source?.name
+            itemView.txt_date.text = DateFormatter.dateFormatter(article.publishedAt!!)
 
             Glide.with(context).load(article.urlToImage)
                 .apply(

@@ -25,9 +25,9 @@ class HeadlinesRepository @Inject constructor(
                 result.data?.articles?.let { it ->
                     articleDao.deleteArticleDetails()
                     articleDao.insertArticles(it)
-                    emit(result)
                 }
             }
+            emit(result)
         }.flowOn(Dispatchers.IO)
     }
 

@@ -15,11 +15,11 @@
             android:id="@+id/ivPoster"
             android:layout_width="match_parent"
             android:layout_height="600dp"
-            android:scaleType="fitXY"
             android:foreground="@drawable/activity_detail_shadow"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <FrameLayout
@@ -27,14 +27,15 @@
             android:layout_height="match_parent"
             android:paddingBottom="@dimen/activity_detail_20dp"
             android:scaleType="fitXY"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/fl_cardview_dimen_10dp"
+                android:layout_marginLeft="@dimen/fl_cardview_dimen_24dp"
+                android:layout_marginRight="@dimen/fl_cardview_dimen_24dp"
                 android:layout_marginBottom="@dimen/activity_detail_20dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -46,35 +47,35 @@
                     android:text="abcdefghi"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_29sp"
-                    card_view:layout_constraintBottom_toTopOf="@+id/txt_channel"
-                    card_view:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_channel"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_channel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:alpha="0.9"
+                    android:alpha="0.5"
                     android:fontFamily="@font/robotoslab_bold"
                     android:text="CNN"
-                    android:textColor="@color/light_grey"
+                    android:textColor="@color/detail_white"
                     android:textSize="@dimen/text_size_20sp"
-                    card_view:layout_constraintBottom_toTopOf="@+id/txt_content"
-                    card_view:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="16dp"
+
                     android:alpha="0.5"
                     android:fontFamily="@font/robotoslab_regular"
+
                     android:text="2019-05-03"
-                    android:textColor="@color/light_grey"
+                    android:textColor="@color/detail_white"
                     android:textSize="@dimen/text_size_20sp"
-                    card_view:layout_constraintBottom_toTopOf="@+id/txt_content"
-                    card_view:layout_constraintStart_toEndOf="@+id/txt_channel" />
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_channel"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_content"
@@ -82,16 +83,20 @@
                     android:layout_height="wrap_content"
                     android:alpha="0.5"
                     android:fontFamily="@font/robotoslab_regular"
+                    android:text="gkhjhh"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/text_size_14sp"
-                    card_view:layout_constraintBottom_toBottomOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/fl_cardview_dimen_10dp"
+                    android:id="@+id/img_back_arrow"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="@dimen/fl_cardview_dimen_50dp"
+                    android:background="@drawable/bg_back_arrow"
+                    android:foreground="@drawable/ripple"
+                    android:padding="5dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     card_view:srcCompat="@drawable/ic_arrow_back" />

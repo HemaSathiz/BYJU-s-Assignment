@@ -1,6 +1,7 @@
 package com.sample.headlinesbyjusassignment.ui.headlinesdetail
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -8,6 +9,7 @@ import com.sample.headlinesbyjusassignment.R
 import com.sample.headlinesbyjusassignment.databinding.ActivityDetailBinding
 import com.sample.headlinesbyjusassignment.model.Article
 import com.sample.headlinesbyjusassignment.util.ConstantHelper
+import com.sample.headlinesbyjusassignment.util.DateFormatter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_item_article.view.*
 
@@ -21,6 +23,10 @@ class HeadlinesDetailActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
         var article: Article =
             intent?.getParcelableExtra<Article>(ConstantHelper.HEADLINES_DETAIL)!!
         article.let { detail ->
@@ -32,6 +38,9 @@ class HeadlinesDetailActivity : AppCompatActivity() {
             binding.txtContent.text = detail.description
             binding.txtChannel.text = detail.source?.name
             binding.txtTitle.text = detail.title
+            binding.txtDate.text = DateFormatter.dateFormatter(article.publishedAt!!)
         }
+
+        binding.imgBackArrow.setOnClickListener { finish() }
     }
 }
