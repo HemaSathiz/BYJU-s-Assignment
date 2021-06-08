@@ -17,11 +17,22 @@ class HeadlinesRepository @Inject constructor(
 
     suspend fun fetchHeadlines(): Flow<Result<HeadlinesResponse>?> {
         return flow {
+            emit(fetchHeadlinesCatched())
             emit(Result.loading())
-            val result = movieRemoteDataSource.fetchRecepies()
-            articleDao.insertArticles(result.data?.articles!!)
+            val result = movieRemoteDataSource.fetchHeadlinesData()
 
-            emit(result)
+            if (result.status == Result.Status.SUCCESS) {
+                result.data?.articles?.let { it ->
+                    articleDao.deleteArticleDetails()
+                    articleDao.insertArticles(it)
+                    emit(result)
+                }
+            }
         }.flowOn(Dispatchers.IO)
     }
+
+    private fun fetchHeadlinesCatched(): Result<HeadlinesResponse>? =
+        articleDao.getArticleDetails()?.let {
+            Result.success(HeadlinesResponse(it, "Success", 0))
+        }
 }

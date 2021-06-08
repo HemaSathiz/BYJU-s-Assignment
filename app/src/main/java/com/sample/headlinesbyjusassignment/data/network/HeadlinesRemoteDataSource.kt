@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class HeadlinesRemoteDataSource @Inject constructor(private val retrofit: Retrofit, private val apiService: RestInterface) {
 
-    suspend fun fetchRecepies(): Result<HeadlinesResponse> {
+    suspend fun fetchHeadlinesData(): Result<HeadlinesResponse> {
 
         return getResponse(
             request = { apiService.getHeadlinesData() },

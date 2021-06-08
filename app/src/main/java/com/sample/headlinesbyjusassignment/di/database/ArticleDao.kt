@@ -8,7 +8,7 @@ import com.sample.headlinesbyjusassignment.model.Article
 
 @Dao
 interface ArticleDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertArticles(movieList: List<Article>)
 
     @Query("SELECT * FROM Article")

@@ -2,17 +2,17 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7293bc14997e01c28edff1ddd93f1185",
+    "identityHash": "44e4f5b3cf13d14dc18103f39e6d47c3",
     "entities": [
       {
         "tableName": "Article",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `author` TEXT, `content` TEXT, `description` TEXT, `publishedAt` TEXT, `title` TEXT, `url` TEXT, `urlToImage` TEXT, `source` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `author` TEXT, `content` TEXT, `description` TEXT, `publishedAt` TEXT, `title` TEXT, `url` TEXT, `urlToImage` TEXT, `source` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "author",
@@ -76,7 +76,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7293bc14997e01c28edff1ddd93f1185')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '44e4f5b3cf13d14dc18103f39e6d47c3')"
     ]
   }
 }

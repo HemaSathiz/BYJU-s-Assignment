@@ -8,7 +8,6 @@ class SourceTypeConverter {
     @TypeConverter
     fun fromSource(source: Source): String {
         return JSONObject().apply {
-            put("id", source.id)
             put("name", source.name)
         }.toString()
     }
@@ -16,6 +15,6 @@ class SourceTypeConverter {
     @TypeConverter
     fun toSource(source: String): Source {
         val json = JSONObject(source)
-        return Source(json.getString("id"), json.getString("name"))
+        return Source(json.getString("name"))
     }
 }

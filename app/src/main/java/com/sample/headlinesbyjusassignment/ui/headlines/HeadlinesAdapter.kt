@@ -1,6 +1,7 @@
 package com.sample.headlinesbyjusassignment.ui.headlines
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.sample.headlinesbyjusassignment.R
 import com.sample.headlinesbyjusassignment.model.Article
+import com.sample.headlinesbyjusassignment.ui.headlinesdetail.HeadlinesDetailActivity
+import com.sample.headlinesbyjusassignment.util.ConstantHelper
 import kotlinx.android.synthetic.main.list_item_article.view.*
 
 class HeadlinesAdapter(private val context: Context, private val list: ArrayList<Article>) :
@@ -19,6 +22,9 @@ class HeadlinesAdapter(private val context: Context, private val list: ArrayList
 
         fun bind(article: Article) {
             itemView.setOnClickListener {
+                val intent = Intent(context, HeadlinesDetailActivity::class.java)
+                intent.putExtra(ConstantHelper.HEADLINES_DETAIL, article)
+                context.startActivity(intent)
             }
             itemView.txt_title.text = article.title
             itemView.txt_channel.text = article.source?.name
