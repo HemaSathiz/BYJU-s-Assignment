@@ -1,6 +1,10 @@
 package com.sample.headlinesbyjusassignment.model
 
+import androidx.room.Entity
+
+@Entity
 data class Source(
-    val id: Any,
-    val name: String
+
+    var id: Any? = null,
+    var name: String? = null
 )

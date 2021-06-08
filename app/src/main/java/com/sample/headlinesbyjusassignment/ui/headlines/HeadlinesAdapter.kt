@@ -21,7 +21,7 @@ class HeadlinesAdapter(private val context: Context, private val list: ArrayList
             itemView.setOnClickListener {
             }
             itemView.txt_title.text = article.title
-            itemView.txt_channel.text = article.source.name
+            itemView.txt_channel.text = article.source?.name
 
             Glide.with(context).load(article.urlToImage)
                 .apply(

@@ -2,7 +2,7 @@ package com.sample.headlinesbyjusassignment.data.network
 
 import com.sample.headlinesbyjusassignment.model.HeadlinesResponse
 import com.sample.headlinesbyjusassignment.model.Result
-import com.sample.headlinesbyjusassignment.network.RestInterface
+import com.sample.headlinesbyjusassignment.di.network.RestInterface
 import com.sample.headlinesbyjusassignment.util.ErrorUtils
 import retrofit2.Response
 import retrofit2.Retrofit

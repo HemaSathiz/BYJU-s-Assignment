@@ -1,4 +1,4 @@
-package com.sample.headlinesbyjusassignment.network
+package com.sample.headlinesbyjusassignment.di.network
 
 import com.sample.headlinesbyjusassignment.model.HeadlinesResponse
 import com.sample.headlinesbyjusassignment.util.ConstantHelper
