@@ -10,4 +10,5 @@
     <dimen name="text_size_18sp">18sp</dimen>
     <dimen name="text_size_20sp">20sp</dimen>
     <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="fl_cardview_dimen_12dp">12dp</dimen>
 </resources>

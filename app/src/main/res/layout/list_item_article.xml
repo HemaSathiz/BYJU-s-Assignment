@@ -1,87 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/item_headlines_dimen_6dp"
-    android:layout_marginRight="@dimen/item_headlines_dimen_6dp"
-    card_view:cardCornerRadius="8dp"
-    card_view:cardUseCompatPadding="true"
-    card_view:cardElevation="9dp"
+    android:background="@drawable/cardview_shadow">
 
-   >
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true">
 
-        <ImageView
-            android:id="@+id/ivPoster"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/image_shadow"
-
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/ivPoster"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/fl_cardview_dimen_10dp"
-                android:layout_marginLeft="@dimen/fl_cardview_dimen_10dp">
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="abcdefghi"
-                    android:textColor="@color/light_grey"
-                    android:textSize="@dimen/text_size_18sp"
-                    android:paddingBottom="5dp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_channel"
-                    app:layout_constraintStart_toStartOf="parent" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:background="@drawable/image_shadow"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_channel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CNN"
-                    android:textColor="@color/light_grey"
-                    android:textSize="@dimen/text_size_12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-/>
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2019-05-03"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/fl_cardview_dimen_10dp"
-                    android:textColor="@color/light_grey"
-                    android:textSize="@dimen/text_size_12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/txt_channel" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_marginBottom="@dimen/fl_cardview_dimen_12dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotoslab_regular"
+                        android:paddingBottom="24dp"
+                        android:text="abcdefghi"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_20sp"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_channel"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_channel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.9"
+                        android:fontFamily="@font/robotoslab_bold"
+                        android:text="CNN"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/text_size_12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fl_cardview_dimen_10dp"
+                        android:alpha="0.5"
+                        android:fontFamily="@font/robotoslab_regular"
+                        android:text="2019-05-03"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/text_size_12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            </FrameLayout>
 
 
-        </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
