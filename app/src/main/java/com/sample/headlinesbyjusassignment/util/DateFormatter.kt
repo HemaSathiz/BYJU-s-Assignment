@@ -12,7 +12,6 @@ object DateFormatter {
     fun dateFormatter(date: String): String {
         var format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX")
         val newDate: Date = format.parse(date)
-
         format = SimpleDateFormat("yyyy-MM-dd")
         return format.format(newDate)
     }
