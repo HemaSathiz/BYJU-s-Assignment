@@ -19,7 +19,7 @@ class HeadlinesRemoteDataSource @Inject constructor(
     suspend fun fetchHeadlinesData(): Result<HeadlinesResponse> {
 
         return getResponse(
-            request = { apiService.getHeadlinesData("tesla", DateFormatter.currentDate(), "publishedAt", ConstantHelper.API_KEY) },
+            request = { apiService.getHeadlinesData( DateFormatter.currentDate(), "publishedAt", ConstantHelper.API_KEY) },
             defaultErrorMessage = "Error fetching Headlines List"
         )
     }

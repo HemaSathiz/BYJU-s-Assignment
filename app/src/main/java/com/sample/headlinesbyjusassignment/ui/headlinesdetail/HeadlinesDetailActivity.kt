@@ -10,8 +10,6 @@ import com.sample.headlinesbyjusassignment.databinding.ActivityDetailBinding
 import com.sample.headlinesbyjusassignment.model.Article
 import com.sample.headlinesbyjusassignment.util.ConstantHelper
 import com.sample.headlinesbyjusassignment.util.DateFormatter
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.list_item_article.view.*
 
 class HeadlinesDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding

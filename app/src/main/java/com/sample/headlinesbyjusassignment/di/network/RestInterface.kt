@@ -9,6 +9,6 @@ import retrofit2.http.Query
 
 interface RestInterface {
     @Headers("Content-Type: application/json")
-    @GET("everything?")
-    suspend fun getHeadlinesData(@Query("q") q: String, @Query("from") date: String, @Query("sortBy") sortBy: String, @Query("apiKey") apiKey: String): Response<HeadlinesResponse>
+    @GET("everything?q=tesla")
+    suspend fun getHeadlinesData( @Query("from") date: String, @Query("sortBy") sortBy: String, @Query("apiKey") apiKey: String): Response<HeadlinesResponse>
 }
