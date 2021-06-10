@@ -15,4 +15,10 @@ object DateFormatter {
         format = SimpleDateFormat("yyyy-MM-dd")
         return format.format(newDate)
     }
+
+    fun currentDate(): String {
+        val todayDate = Calendar.getInstance().time
+        val formatter = SimpleDateFormat("yyyy-MM-dd")
+        return formatter.format(todayDate)
+    }
 }

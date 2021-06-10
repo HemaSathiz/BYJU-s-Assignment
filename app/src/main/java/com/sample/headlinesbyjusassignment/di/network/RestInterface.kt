@@ -5,9 +5,10 @@ import com.sample.headlinesbyjusassignment.util.ConstantHelper
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Query
 
 interface RestInterface {
     @Headers("Content-Type: application/json")
-    @GET("everything?q=tesla&from=2021-05-07&sortBy=publishedAt&apiKey=" + ConstantHelper.API_KEY)
-    suspend fun getHeadlinesData(): Response<HeadlinesResponse>
+    @GET("everything?")
+    suspend fun getHeadlinesData(@Query("q") q: String, @Query("from") date: String, @Query("sortBy") sortBy: String, @Query("apiKey") apiKey: String): Response<HeadlinesResponse>
 }

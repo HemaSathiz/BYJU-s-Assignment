@@ -27,8 +27,6 @@ import retrofit2.Retrofit
 
 class DatabaseApiTest {
 
-    private var headlinessDetail: List<Article>? = null
-
     @Rule
     @JvmField
     val instantExecutorRule = InstantTaskExecutorRule()
