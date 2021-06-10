@@ -7,16 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.sample.headlinesbyjusassignment.databinding.ActivityMainBinding
+import com.sample.headlinesbyjusassignment.databinding.ActivityHeadlineBinding
 import com.sample.headlinesbyjusassignment.model.Article
 import com.sample.headlinesbyjusassignment.model.Result
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_headline.*
 import kotlinx.coroutines.InternalCoroutinesApi
 
 @AndroidEntryPoint
 class HeadlinesActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityHeadlineBinding
     private val list = ArrayList<Article>()
     @InternalCoroutinesApi
     private val viewModel by viewModels<HeadlinesViewModel>()
@@ -25,7 +25,7 @@ class HeadlinesActivity : AppCompatActivity() {
     @InternalCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHeadlineBinding.inflate(layoutInflater)
         setContentView(binding.root)
         init()
         subscribeHeadlines()
